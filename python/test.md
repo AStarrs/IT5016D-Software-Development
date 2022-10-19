@@ -1,1 +1,143 @@
 ## This is a test of another md file in python folder
+
+## Lists 
+
+The Python list is a data type.
+
+It is a container that holds a number of other objects, in a given order.
+
+L = ["A", "B", "C"]
+
+L = list()
+
+`len(L)` returns the number of items in the list
+
+`L[i]` returns the item at index i
+
+`L[i:j]` returns a new list, containing the objects between i and j
+
+### List Index and Negative index
+
+You can use the index operator [ ] to access an item in a list. Index starts
+from 0. And goes from left to right 0, 1, 2, 3, 4...
+
+Negative index starts from the end of the list
+
+-1 is the last item in the list
+
+# empty list
+my_list = []
+# list of integers
+my_list = [1, 2, 3]
+# list with mixed datatypes
+my_list = [1, "Hello", 3.4]
+# nested list
+my_list = ["mouse", [8, 4, 6]]
+
+my_list = ['p','r','o','b','e']
+# Output: p
+print(my_list[0])
+# Output: o
+print(my_list[2])
+# Output: e
+print(my_list[4])
+# Error! Only integer can be used for indexing
+# my_list[4.0]
+# Nested List
+n_list = ["Happy", [2,0,1,6]]
+# Nested indexing
+# Output: a
+print(n_list[0][1])
+# Output: 5
+print(n_list[1][3])
+# using negative indexing
+# Output: e
+print(my_list[-1])
+
+
+primes = [1, 2, 3, 5, 7, 11, 13]
+
+### To add to a list
+
+primes.append(17)
+
+primes
+
+[1, 2, 3, 5, 7, 11, 13, 17]
+
+#### Slicing the list
+
+primes[2:5]
+
+new list from index 2 to 5
+
+the beginning value is included, but the ending value is not included
+
+#### combining 2 lists together - Concatenation
+
+letters = ['a', 'b', 'c']
+
+numbers = [1, 2, 3]
+
+letters + numbers
+
+['a', 'b', 'c', 1, 2, 3]
+
+#### Methods
+
+dir(numbers)
+
+### Iterating lists
+
+Iterating is a means to loop through a list. The for-in structure is used
+specifically to iterate through the collection of items, List being one of those
+collection types.
+
+sample_list = [1, 4, 5, 2, 9, 12]
+ ```
+for item in sample_list:
+    print("An item in the sample list is ", item)
+ ```
+# If you need both the index and the item, use the enumerate function:
+```
+for index, item in enumerate(sample_list):
+    print ("The element index is ",index," and the value is ", item)
+ ```
+# If you need only the index, use range and len:
+```
+for index in range(len(sample_list)):
+    print ("The element index is ",index)
+ ```
+# The list object supports the iterator protocol. To explicitly
+# create an iterator, use the built-in iter function:
+ ```
+i = iter(sample_list)
+item = i.__next__() # fetch first value
+print("An item in the sample list is ", item)
+item = i.__next__() # fetch second value
+print("An item in the sample list is ", item)
+``` 
+# Python provides various shortcuts for common list operations. For example,
+# if a list contains numbers, the built-in sum function gives you the sum:
+``` 
+list_sum = sum(sample_list)
+print("\nThe sum of the items in the list is.... ", list_sum)
+ 
+subtotal = 23
+total = sum(sample_list, subtotal)
+print("\nThe sum of the items in the list and another number is.... ", total)
+ 
+average = float(sum(sample_list)) / len(sample_list)
+print("\nThe average of the items in the list is.... ", average)
+ ```
+# If a list contains strings, you can combine the string into
+# a single long string using the join string method:
+
+ ```
+haka_list = ["Taringa","whakarongo!","Kia","rite!","Kia","rite!"]
+joined_list = " ".join(haka_list)
+print("\nThe joined list is....", joined_list)
+```
+ 
+
+

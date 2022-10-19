@@ -68,3 +68,40 @@ else:
     cost = rate * ParkTime
     print("The cost of the parking is $", cost)
 
+
+# Lists
+
+L = ["A", "B", "C"]
+
+my_list = ['p','r','o','b','e']
+# Output: p
+print(my_list[0])
+# Output: o
+print(my_list[2])
+# Output: e
+print(my_list[4])
+# Error! Only integer can be used for indexing
+# my_list[4.0]
+# Nested List
+n_list = ["Happy", [2,0,1,6]]
+# Nested indexing
+# Output: a
+print(n_list[0][1])
+# Output: 5
+print(n_list[1][3])
+# using negative indexing
+# Output: e
+print(my_list[-1])
+
+
+primes = [1, 2, 3, 5, 7, 11, 13]
+
+primes.append(17)
+
+primes
+
+letters = ['a', 'b', 'c']
+
+numbers = [1, 2, 3]
+
+letters + numbers
