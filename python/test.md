@@ -192,3 +192,29 @@ A tuple is an immutable sequence of Python objects. Immutable means that the seq
 - Tuples perform faster than lists
 - Tuples immutability makes them ideal for creating constants since they can't change. Using tuples can add a level of safety to your code. 
 
+## Dictionaries 
+
+ A dictionary is a collection, but it uses different syntax and semantics from
+ other collection types. A single dictionary item consists of 2 parts separated
+ by a colon. The first part is the dictionary key. The key is unique, so items
+ from the same dictionary must have different keys. The second part is the item
+ value. This can be of any type, but the key must be of an immutable data type
+ such as string, number, or tuple. Dictionary items are separated by commas, and
+ the whole dictionary is enclosed in curly braces. An empty dictionary without
+ any items is written with just two curly braces, like this: `dictionary_1 = {}`
+ 
+ Points to remember about dictionaries:
+
+- Dictionaries use keys to access individual dictionary items and their values
+- Dictionary items are unordered, unlike other containers. Syntactically dictionary items are written one after the other and are separated by commas. However, the items are not stored in any order 
+- Dictionaries item keys must be of any immutable type
+- Dictionary item values can be of any type
+- Dictionaries cannot always be sorted. This depends on the types of the keys and values. Since some types, such as objects, have no obvious numeric value, sorting may not be possible.
+- Dictionaries themselves are mutable. Items can be added or deleted. The dictionary itself can be emptied of all items.
+
+### Programmer's Best Practice Tips
+- Avoid creating infinite loops. These can cause a program to stall. Infinite loops are also difficult to test.
+- Use i, j and k as variables in from statements. This is a coding convention recognised by experienced developers
+- Use the "from element in list:" syntax to search for an item in a list. This approach avoids the error that might occur if the item being searched for doesn't exist in the list
+- Use lists for most applications. Remember that tuples are immutable, and should only be used where the requirement is for a collection to be unchangeable
+- Always write container elements on new lines. This makes the code easier to read.
