@@ -218,3 +218,4 @@ A tuple is an immutable sequence of Python objects. Immutable means that the seq
 - Use the "from element in list:" syntax to search for an item in a list. This approach avoids the error that might occur if the item being searched for doesn't exist in the list
 - Use lists for most applications. Remember that tuples are immutable, and should only be used where the requirement is for a collection to be unchangeable
 - Always write container elements on new lines. This makes the code easier to read.
+

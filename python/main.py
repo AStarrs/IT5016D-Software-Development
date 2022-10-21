@@ -231,3 +231,24 @@ if not state:
 # get a city with a default value
 city = cities.get('TX', 'Does Not Exist')
 print ("The city for the state 'TX' is: {0}".format(city))
+
+# functions
+
+def show_hello():
+    print("Hello there, this is my very first function!!!\n\n")
+ 
+print("Testing my first user defined function...\n\n")
+ 
+# invoking the function
+show_hello()
+ 
+# invoking the function again
+show_hello()
+
+# tiangle area 
+
+def triangle_area(b, h):
+    '''returns the area of the triangle with base b and height h'''
+    return 0.5 * b * h
+
+triangle_area(3,6)
