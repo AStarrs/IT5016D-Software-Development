@@ -13,7 +13,7 @@ class Ticket:
         self.description = description
 
         self.ticket_number = Ticket.num_of_tickets + 2000
-    
+
     def print_ticket(self):
         '''Displays main information about the ticket'''
         # return '{} {} {} {} {}'.format(self.ID, self.creator, self.email, self.description, self.response)
@@ -22,11 +22,14 @@ class Ticket:
         print("Creator:", self.creator)
         print("Email:", self.email)
         print("Description:", self.description)
+        print("Response:", "Not Yet Provided")
         # return f'{self.staff_id}\n{self.creator}\n{self.email}\n{self.description}'
 
-
-    def print_stats(self):
-        pass
+    # @classmethod
+    # def print_stats(cls):
+    #     print("Number of Tickets Submitted:", Ticket.num_of_tickets)
+    #     print("Number of Open Tickets:", Ticket.open_tickets)
+    #     print("Number of Resoleved Tickets:", Ticket.resolved_tickets)
 
     def ticket_response(self):
         pass
