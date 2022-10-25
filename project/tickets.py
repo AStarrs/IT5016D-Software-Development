@@ -1,6 +1,5 @@
 class Ticket:
 
-
     num_of_tickets = 0
     open_tickets = 0
     resolved_tickets = 0
@@ -27,4 +26,7 @@ class Ticket:
 
 
     def print_stats(self):
+        pass
+
+    def ticket_response(self):
         pass
