@@ -16,7 +16,8 @@ class Ticket:
 
         self.ticket_number = Ticket.num_of_tickets + 2000
 
-        
+        if "password change" in self.description.lower():
+            self.new_password()
 
     def print_ticket(self):
         '''Displays main information about the ticket'''
@@ -55,4 +56,4 @@ class Ticket:
 
         # Update ticket statistics
         Ticket.open_tickets -=1
-        Ticket.closed_tickets +=1
+        Ticket.resolved_tickets +=1
