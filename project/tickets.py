@@ -17,7 +17,7 @@ class Ticket:
         self.ticket_number = Ticket.num_of_tickets + 2000
 
         if "password change" in self.description.lower():
-            self.new_password()
+            self.autoresolve_password_change()
 
     def print_ticket(self):
         '''Displays main information about the ticket'''
@@ -38,12 +38,19 @@ class Ticket:
     #     print("Number of Open Tickets:", Ticket.open_tickets)
     #     print("Number of Resoleved Tickets:", Ticket.resolved_tickets)
 
-    def ticket_response(self):
-        Ticket.open_tickets +=1
-        Ticket.open_tickets +=1
-        pass
+    def respond_to_ticket(self, response):
+        #get respopnse from user
+        self.response = response
 
-    def new_password(self):
+        # Update status
+        self.status = "Closed"
+
+        # Update ticket statistics
+        Ticket.open_tickets -=1
+        Ticket.resolved_tickets +=1
+    
+
+    def autoresolve_password_change(self):
 
         # Generate new password
         first_part = self.staff_id[:2]
@@ -59,3 +66,17 @@ class Ticket:
         # Update ticket statistics
         Ticket.open_tickets -=1
         Ticket.resolved_tickets +=1
+
+    def reopen_ticket(self, response):
+        #get respopnse from user
+        self.response = response
+
+        # Update status and reopen ticket
+        self.status = "Reopened"
+
+        # Update ticket statistics
+        Ticket.open_tickets +=1
+        Ticket.resolved_tickets -=1
+    
+
+

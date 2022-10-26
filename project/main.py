@@ -17,9 +17,18 @@ ticket3 = Ticket("JOHNW", "John Wright", "anna@example.com", "My python program 
 # ticket6 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program is not working")
 # ticket7 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program is not working")
 # ticket8 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program is not working")
+show_stats()
 
 # print(Ticket.print_stats())
+ticket1.respond_to_ticket("Issue fixed")
 
+ticket1.print_ticket()
+ticket2.print_ticket()
+ticket3.print_ticket()
+
+show_stats()
+
+ticket1.reopen_ticket("Software update required")
 # print(ticket1.new_password())
 show_stats()
 
