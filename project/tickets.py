@@ -12,7 +12,7 @@ class Ticket:
         self.email = email
         self.description = description
         self.response = "Not Yet Provided"
-        self.status = "Opened"
+        self.status = "Open"
 
         self.ticket_number = Ticket.num_of_tickets + 2000
 
@@ -28,6 +28,8 @@ class Ticket:
         print("Email:", self.email)
         print("Description:", self.description)
         print("Response:", self.response)
+        print("Status:", self.status)
+        print()
         # return f'{self.staff_id}\n{self.creator}\n{self.email}\n{self.description}'
 
     # @classmethod
