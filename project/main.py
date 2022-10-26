@@ -19,9 +19,11 @@ ticket2 = Ticket(2222, "Olga Starovoytova", "anna@example.com", "My python progr
 
 # print(Ticket.print_stats())
 
-print(ticket1.new_password())
+# print(ticket1.new_password())
 # show_stats()
 
 # print("Ticket 1", ticket1.num_of_tickets)
 # print("Ticket 2", ticket2.num_of_tickets)
 # print("System: ", Ticket.num_of_tickets)
+
+print(ticket1.print_ticket())

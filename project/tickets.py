@@ -11,8 +11,12 @@ class Ticket:
         self.creator = creator
         self.email = email
         self.description = description
+        self.response = "Not Yet Provided"
+        self.status = "Opened"
 
         self.ticket_number = Ticket.num_of_tickets + 2000
+
+        
 
     def print_ticket(self):
         '''Displays main information about the ticket'''
@@ -22,7 +26,7 @@ class Ticket:
         print("Creator:", self.creator)
         print("Email:", self.email)
         print("Description:", self.description)
-        print("Response:", "Not Yet Provided")
+        print("Response:", self.response)
         # return f'{self.staff_id}\n{self.creator}\n{self.email}\n{self.description}'
 
     # @classmethod
@@ -32,9 +36,23 @@ class Ticket:
     #     print("Number of Resoleved Tickets:", Ticket.resolved_tickets)
 
     def ticket_response(self):
+        Ticket.open_tickets +=1
+        Ticket.open_tickets +=1
         pass
 
     def new_password(self):
-        first_part = str(self.staff_id)[:2]
+
+        # Generate new password
+        first_part = self.staff_id[:2]
         second_part = self.creator[:3]
-        print(first_part+second_part)
+        new_password = first_part + second_part
+
+        # Update response
+        self.response = f"New password generated: {new_password}"  
+        
+        # Update status
+        self.status = "Closed"
+
+        # Update ticket statistics
+        Ticket.open_tickets -=1
+        Ticket.closed_tickets +=1
