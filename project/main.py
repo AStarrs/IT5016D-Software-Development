@@ -6,9 +6,9 @@ def show_stats():
     print("Number of Open Tickets:", Ticket.open_tickets)
     print("Number of Resoleved Tickets:", Ticket.resolved_tickets)
     
-ticket1 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program is not working")
+ticket1 = Ticket(1234, "Anna Starovoytova", "anna@example.com", "My python program is not working")
 
-ticket2 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program is not working")
+ticket2 = Ticket(2222, "Olga Starovoytova", "anna@example.com", "My python program is not working")
 
 # ticket3 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program is not working")
 # ticket4 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program is not working")
@@ -19,7 +19,7 @@ ticket2 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program 
 
 # print(Ticket.print_stats())
 
-# print(ticket1.ticket_number)
+print(ticket1.new_password())
 # show_stats()
 
 # print("Ticket 1", ticket1.num_of_tickets)

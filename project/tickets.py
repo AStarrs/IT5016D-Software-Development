@@ -33,3 +33,8 @@ class Ticket:
 
     def ticket_response(self):
         pass
+
+    def new_password(self):
+        first_part = str(self.staff_id)[:2]
+        second_part = self.creator[:3]
+        print(first_part+second_part)
