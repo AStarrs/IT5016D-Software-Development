@@ -4,6 +4,8 @@ class Ticket:
     open_tickets = 0
     resolved_tickets = 0
 
+    tickets = []
+
     def __init__(self, staff_id, creator, email, description):
         Ticket.num_of_tickets += 1
         Ticket.open_tickets +=1
@@ -19,9 +21,11 @@ class Ticket:
         if "password change" in self.description.lower():
             self.autoresolve_password_change()
 
+        Ticket.tickets.append(self)
+
+
     def print_ticket(self):
-        '''Displays main information about the ticket'''
-        # return '{} {} {} {} {}'.format(self.ID, self.creator, self.email, self.description, self.response)
+        #Displays main information about the ticket
         print("Ticket Number:", self.ticket_number)
         print("Staff ID:", self.staff_id)
         print("Creator:", self.creator)
@@ -32,11 +36,6 @@ class Ticket:
         print()
         # return f'{self.staff_id}\n{self.creator}\n{self.email}\n{self.description}'
 
-    # @classmethod
-    # def print_stats(cls):
-    #     print("Number of Tickets Submitted:", Ticket.num_of_tickets)
-    #     print("Number of Open Tickets:", Ticket.open_tickets)
-    #     print("Number of Resoleved Tickets:", Ticket.resolved_tickets)
 
     def respond_to_ticket(self, response):
         #get respopnse from user

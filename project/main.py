@@ -2,41 +2,40 @@ from tickets import Ticket
 
 
 def show_stats():
+    # Print statistic for Submitted, Open, Resoleved tickets
     print("Number of Tickets Submitted:", Ticket.num_of_tickets)
     print("Number of Open Tickets:", Ticket.open_tickets)
     print("Number of Resoleved Tickets:", Ticket.resolved_tickets)
     print()
     
-ticket1 = Ticket("ANNAS", "Anna Starovoytova", "anna@example.com", "My python program is not working")
+def print_all_tickets():
+    # Print all tickets information
+    for ticket in Ticket.tickets:
+        ticket.print_ticket()
 
-ticket2 = Ticket("OLGAS", "Olga Starovoytova", "anna@example.com", "Need Password Change")
+ticket1 = Ticket("ANNAS", "Anna Starovoytova", "annas@example.com", "Printer is not working")
 
-ticket3 = Ticket("JOHNW", "John Wright", "anna@example.com", "My python program is not working")
-# ticket4 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program is not working")
-# ticket5 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program is not working")
-# ticket6 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program is not working")
-# ticket7 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program is not working")
-# ticket8 = Ticket(1, "Anna Starovoytova", "anna@example.com", "My python program is not working")
-show_stats()
+ticket2 = Ticket("OLGAN", "Olga Newman", "olgan@example.com", "Need Password Change")
 
-# print(Ticket.print_stats())
-ticket1.respond_to_ticket("Issue fixed")
+ticket3 = Ticket("JOHNW", "John Wright", "johnw@example.com", "Request for new monitor")
 
-ticket1.print_ticket()
-ticket2.print_ticket()
-ticket3.print_ticket()
 
 show_stats()
+print_all_tickets()
+
+
+ticket1.respond_to_ticket("Printer connection fixed")
+show_stats()
+print_all_tickets()
 
 ticket1.reopen_ticket("Software update required")
-# print(ticket1.new_password())
 show_stats()
+print_all_tickets()
 
-# print("Ticket 1", ticket1.num_of_tickets)
-# print("Ticket 2", ticket2.num_of_tickets)
-# print("System: ", Ticket.num_of_tickets)
 
-ticket1.print_ticket()
-ticket2.print_ticket()
-ticket3.print_ticket()
+
+
+
+
+
 
