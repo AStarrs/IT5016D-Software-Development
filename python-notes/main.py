@@ -252,3 +252,16 @@ def triangle_area(b, h):
     return 0.5 * b * h
 
 triangle_area(3,6)
+
+# strings
+
+string_1 = "Hello World"
+ 
+print("Using the join method to add a : between every char...\n{0}"
+      .format(":".join(string_1)),
+      "\n")
+
+print("Using the join method to add a whitespace between every char...\n{0}"
+      .format(" ".join(string_1)),
+      "\n")
+
