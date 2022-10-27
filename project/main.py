@@ -48,10 +48,10 @@ class Main:
     def print_all_tickets(self):
         # Print all tickets information
         for ticket in Ticket.tickets:
-            ticket.print_ticket(self)
+            ticket.print_ticket()
 
     def run(self):
-        print("Create Ticket")
+        print("========== Creating Tickets ==========\n")
 
         self.ticket1 = Ticket("ANNAC", "Anna Campbel", "annac@example.com", "Printer is not working")
 
@@ -62,14 +62,14 @@ class Main:
         self.show_stats()
         self.print_all_tickets()
 
-        print("Respond to Ticket 2001")
+        print("========== Respond to Ticket 2001 ==========\n")
         # Respond and resolve issue for ticket1, close and change stats
         self.ticket1.respond_to_ticket("Printer connection fixed")
         
         self.show_stats()
         self.print_all_tickets()
 
-        print("Reopen ticket 2002")
+        print("========== Reopen ticket 2002 ==========")
         # Reopen closed ticket2, change stats
         self.ticket2.reopen_ticket("Software update required")
 
@@ -77,6 +77,8 @@ class Main:
         self.print_all_tickets()
 
 
+program = Main()
+program.run()
 
 
 
