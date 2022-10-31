@@ -1,3 +1,6 @@
+"""Ticket class provides main methods and general statistics storage for
+runtime"""
+
 class Ticket:
 
     num_of_tickets = 0
@@ -6,13 +9,21 @@ class Ticket:
 
     tickets = []
 
-    def __init__(self, staff_id, creator, email, description):
+    def __init__(self, staff_id=None, creator=None, email=None, description=None):
         Ticket.num_of_tickets += 1
-        Ticket.open_tickets +=1
-        self.staff_id = staff_id
-        self.creator = creator
-        self.email = email
-        self.description = description
+        Ticket.open_tickets += 1
+        # if no data at ticket creation ask user for input
+        if not staff_id or not creator or not email or not description:
+            self.staff_id = input("Enter staff ID: ")
+            self.creator = input("Enter your name: ")
+            self.email = input("Enter your email: ")
+            self.description = input("Enter the description of your issue: ")
+        else:
+            # used in main.py to pre-generate some tickets without user input
+            self.staff_id = staff_id
+            self.creator = creator
+            self.email = email
+            self.description = description
         self.response = "Not Yet Provided"
         self.status = "Open"
 
@@ -34,11 +45,10 @@ class Ticket:
         print("Response:", self.response)
         print("Status:", self.status)
         print()
-        # return f'{self.staff_id}\n{self.creator}\n{self.email}\n{self.description}'
 
 
     def respond_to_ticket(self, response):
-        #get respopnse from user
+        # update instace response attribute
         self.response = response
 
         # Update status
@@ -79,3 +89,6 @@ class Ticket:
     
 
 
+# ticket1 = Ticket()
+
+# ticket2 = Ticket("12345", "anna", "anna@test.com", "Problem with my keyboard")
