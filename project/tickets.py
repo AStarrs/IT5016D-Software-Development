@@ -33,6 +33,7 @@ class Ticket:
             self.autoresolve_password_change()
 
         Ticket.tickets.append(self)
+        print(f"\nNew ticket {self.ticket_number} has been created")
 
 
     def print_ticket(self):
@@ -75,11 +76,10 @@ class Ticket:
         # Update ticket statistics
         Ticket.open_tickets -=1
         Ticket.resolved_tickets +=1
+        print("\nTicket has been automatically closed and new password generated")
+        print(self.response)
 
-    def reopen_ticket(self, response):
-        #get respopnse from user
-        self.response = response
-
+    def reopen_ticket(self):
         # Update status and reopen ticket
         self.status = "Reopened"
 

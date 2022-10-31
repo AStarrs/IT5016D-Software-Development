@@ -8,7 +8,7 @@ class Menu:
 
     def menu(self):
         return '''
--== Wellcome to the Ticketing System ==-
+-=========== MAIN MENU ===========-
 
 Please choose an option and press Enter:
 
@@ -23,4 +23,6 @@ Press 0 for exit...
 '''
 
     def user_choice(self):
-        return input("Enter your choice: ")
+        choice = input("Enter your choice: ")
+        print() # add empty line after the choice
+        return choice
