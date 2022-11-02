@@ -27,11 +27,15 @@ class Ticket:
         self.response = "Not Yet Provided"
         self.status = "Open"
 
+        # generate ticket number
         self.ticket_number = Ticket.num_of_tickets + 2000
 
+        # run password generator if description contains
+        # "password change"
         if "password change" in self.description.lower():
             self.autoresolve_password_change()
 
+        #add created ticket to a list
         Ticket.tickets.append(self)
         print(f"\nNew ticket {self.ticket_number} has been created")
 

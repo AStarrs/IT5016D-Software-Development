@@ -21,38 +21,18 @@ class Main:
         for ticket in Ticket.tickets:
             ticket.print_ticket()
 
-    # def run(self):
-    #     # Run the program
-    #     print("========== Creating Tickets ==========\n")
-    #     # Creating 3 tickets, ticket2 autoresolve the password change and change
-    #     # status to closed
-    #     self.ticket1 = Ticket("ANNAC", "Anna Campbel", "annac@example.com", "Printer is not working")
-
-    #     self.ticket2 = Ticket("OLGAN", "Olga Newman", "olgan@example.com", "Need Password Change")
-
-    #     self.ticket3 = Ticket("JOHNW", "John Wright", "johnw@example.com", "Request for new monitor")
-
-    #     self.ticket_stats()
-    #     self.print_all_tickets()
-
-    #     print("========== Respond to Ticket 2001 ==========\n")
-    #     # Respond and resolve issue for ticket1, close and change stats
-    #     self.ticket1.respond_to_ticket("Printer connection fixed")
-        
-    #     self.ticket_stats()
-    #     self.print_all_tickets()import os
-
-    #     print("========== Reopen ticket 2002 ==========\n")
-    #     # Reopen closed ticket2, add response, change stats and status
-    #     self.ticket2.reopen_ticket("Software update required")
-
-    #     self.ticket_stats()
-    #     self.print_all_tickets()
-
-    def choose_ticket(self):
+    def choose_ticket(self, closed_only=False, opened_only=False):
         available_tickets = []
         for t in Ticket.tickets:
-            available_tickets.append(t.ticket_number)
+            # create a list of Closed tickets numbers
+            if closed_only and t.status == "Closed":
+                available_tickets.append(t.ticket_number)
+            # create a list of Opened tickets numbers
+            elif opened_only and t.status != "Closed":
+                available_tickets.append(t.ticket_number)
+            # create a list of all tickets numbers
+            elif not closed_only and not opened_only:
+                available_tickets.append(t.ticket_number)
         print("Available tickets:", available_tickets)
         ticket_chosen = input("Enter ticket number: ")
         return ticket_chosen
@@ -78,12 +58,14 @@ runtime of the program to populate with some fake data """)
                 Ticket()
             elif user_choice == "2": # respond to a ticket
                 print("-=========== RESPOND TO TICKET ===========-\n")
-                ticket_chosen = self.choose_ticket()
+                ticket_chosen = self.choose_ticket(opened_only=True)
                 for t in Ticket.tickets:
                     if t.ticket_number == int(ticket_chosen):
                         response = input("Type new response: ")
                         t.respond_to_ticket(response)
-            elif user_choice == "3": # show stats for a ticket
+                        print()
+                        t.print_ticket()
+            elif user_choice == "3": # display a ticket
                 print("-=========== SHOW STATS FOR A TICKET ===========-\n")
                 ticket_chosen = self.choose_ticket()
                 for t in Ticket.tickets:
@@ -94,11 +76,14 @@ runtime of the program to populate with some fake data """)
                 self.ticket_stats()
             elif user_choice == "5": # re-open a ticket
                 print("-=========== REOPEN A TICKET ===========-\n")
-                ticket_chosen = self.choose_ticket()
+                ticket_chosen = self.choose_ticket(closed_only=True)
+           
                 for t in Ticket.tickets:
                     if t.ticket_number == int(ticket_chosen):
                         t.reopen_ticket()
-                        print(f"Ticket {ticket_chosen} has been re-opened")
+                        print(f"Ticket {ticket_chosen} has been re-opened\n")
+                        t.print_ticket()
+
             elif user_choice == "6": # display all tickets
                 print("-=========== DISPLAY ALL TICKETS ===========-\n")
                 self.print_all_tickets()

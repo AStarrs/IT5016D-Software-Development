@@ -1,7 +1,7 @@
 ## Python project for Help Desk Ticketing System prototype
 
 The ticketing system prototype was created to meet customer requirments for
-hendling Help Desk tickets for internal customers.
+handling Help Desk tickets for internal customers.
 
 ### Program functiionality
 
@@ -17,27 +17,48 @@ hendling Help Desk tickets for internal customers.
 
 ### Program structure
 
-Program contains of two Python files:
+Program contains of three Python files:
 * tickets.py
 * main.py
+* menu.py
 
-#### tickets.py 
+### How to run the programm
 
-`class Ticket`
+1. Download three program files (tickets.py, main.py, menu.py) 
 
-Ticket has `class variables`, which are used to keep track of tickets statistics:
+2. Run main.py in terminal with `python3 main.py`
 
-`num_of_tickets`
-`open_tickets`
-`resolved_tickets`
+3. Choose from the main manu options (0-6) to use ticketing system:
 
-`tickets` variable is a list to hold created tickets in memory (used for
-printing all tickets)
+-=========== MAIN MENU ===========-
 
-The main `__init__` method allows to create tickets, update stats, autoresolve
-password change, allocate ticket number and add created ticket to a list of
-tickets
+Please choose an option and press Enter:
 
-#### main.py
+1: Create a ticket
+2: Respond to a ticket
+3: Display a ticket
+4: Show stats for all tickets
+5: Re-open a ticket
+6: Display all tickets
+
+Press 0 for exit...
+
+Note: There are 3 tickets created to populate the ticketing
+system for testing. The task does not specify the need to keep the
+data persistent, so I decided to create 3 tickets during the
+runtime of the program to populate with some fake data
+
+* To create new ticket, enter 1 and input information step by step following
+   the system questions. 
+
+* To respond to a ticket, press 2 and type ticket number from the list of Opened
+   ticket numbers, enter response.
+
+* To display a particular ticket, press 3 and enter a ticket number from the
+   list of ticket numbers.
+
+* To re-open ticket, enter 5 and type ticket number from the list of
+   Closed tickets.
+
 
 
