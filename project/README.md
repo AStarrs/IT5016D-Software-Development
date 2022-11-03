@@ -35,15 +35,20 @@ Program contains of three Python files:
 Please choose an option and press Enter:
 
 1: Create a ticket
+
 2: Respond to a ticket
+
 3: Display a ticket
+
 4: Show stats for all tickets
+
 5: Re-open a ticket
+
 6: Display all tickets
 
 Press 0 for exit...
 
-Note: There are 3 tickets created to populate the ticketing
+*Note:* There are 3 tickets created to populate the ticketing
 system for testing. The task does not specify the need to keep the
 data persistent, so I decided to create 3 tickets during the
 runtime of the program to populate with some fake data
