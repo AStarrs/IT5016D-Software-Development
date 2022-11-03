@@ -34,16 +34,11 @@ Program contains of three Python files:
 
 Please choose an option and press Enter:
 
-1: Create a ticket
-
-2: Respond to a ticket
-
-3: Display a ticket
-
-4: Show stats for all tickets
-
-5: Re-open a ticket
-
+1: Create a ticket\
+2: Respond to a ticket\
+3: Display a ticket\
+4: Show stats for all tickets\
+5: Re-open a ticket\
 6: Display all tickets
 
 Press 0 for exit...
