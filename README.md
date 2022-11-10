@@ -2,6 +2,6 @@
 
 IT5016D-Software-Development project containes:
 
-* notes for Software Development paper and practice code files 
-* Project folder for assignment 1
+* `python-notes` folder with notes and and practice code files for Software Development paper 
+* `project` folder for assignment 1
 
